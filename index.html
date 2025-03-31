@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>v86 Sanal Makine</title>
+    <script src="https://cdn.jsdelivr.net/npm/@copy/v86/build/v86.js"></script>
+</head>
+<body>
+    <div id="vm-screen" style="width: 640px; height: 480px;"></div>
+    <button onclick="startVM()">Sanal Makineyi Başlat</button>
+
+    <script>
+        function startVM() {
+            const emulator = new v86({
+                screen_container: document.getElementById("vm-screen"),
+                bios: { url: "https://cdn.jsdelivr.net/npm/@copy/v86/build/seabios.bin" },
+                vga_bios: { url: "https://cdn.jsdelivr.net/npm/@copy/v86/build/vgabios.bin" },
+                cdrom: { url: "https://example.com/path/to/your-os.iso" }, // ISO'nuzun URL'si
+                autostart: true,
+            });
+        }
+    </script>
+</body>
+</html>
